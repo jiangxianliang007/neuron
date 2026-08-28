@@ -103,7 +103,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri "https://www.ssl.com/download/codesigntool-for-windows/" -OutFile CodeSignTool.zip
+          Invoke-WebRequest -Uri "https://github.com/SSLcom/CodeSignTool/releases/download/v1.3.2/CodeSignTool-v1.3.2-windows.zip" -OutFile CodeSignTool.zip
           Expand-Archive -Path CodeSignTool.zip -DestinationPath C:\CodeSignTool-tmp -Force
           $root = Get-ChildItem C:\CodeSignTool-tmp | Select-Object -First 1
           if (Test-Path (Join-Path $root.FullName "CodeSignTool.bat")) {
